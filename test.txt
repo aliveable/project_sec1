@@ -1,0 +1,61 @@
+import pip
+import plotly
+import plotly.plotly as py      
+import plotly.plotly as py
+import plotly.graph_objs as go
+
+trace1 = go.Bar(
+    x=['Statement Value (Jan)', 'Statement Value(Feb)',  'Statement Value(Mar)',  'Statement Value(Apr)'\
+       ,  'Statement Value(May)',  'Statement Value(Jun)',  'Statement Value(Jul)',  'Statement Value(Aug)'\
+       ,  'Statement Value(Sep)',  'Statement Value(Oct)',  'Statement Value(Nov)',  'Statement Value(Dec)'],
+    y=[1241, 1289, 1338, 1663, 1677, 1737, 1784, 1745, 1974, 1722, 1647, 1732],
+    name='Internet Banking 56',
+    marker=dict(
+        color='rgb(238, 18, 137)'
+    )
+)
+trace2 = go.Bar(
+    x=['Statement Value (Jan)', 'Statement Value(Feb)',  'Statement Value(Mar)',  'Statement Value(Apr)'\
+       ,  'Statement Value(May)',  'Statement Value(Jun)',  'Statement Value(Jul)',  'Statement Value(Aug)'\
+       ,  'Statement Value(Sep)',  'Statement Value(Oct)',  'Statement Value(Nov)',  'Statement Value(Dec)'],
+    y=[51, 49, 56, 53, 59, 59, 62, 66, 68, 75, 75, 79],
+    name='Mobile Banking 56',
+    marker=dict(
+        color='rgb(255, 64, 64)'
+    )
+)
+trace3 = go.Bar(
+    x=['Statement Value (Jan)', 'Statement Value(Feb)',  'Statement Value(Mar)',  'Statement Value(Apr)'\
+       ,  'Statement Value(May)',  'Statement Value(Jun)',  'Statement Value(Jul)',  'Statement Value(Aug)'\
+       ,  'Statement Value(Sep)',  'Statement Value(Oct)',  'Statement Value(Nov)',  'Statement Value(Dec)'],
+    y=[1816, 1633, 1861, 1682, 1674, 1643, 1732, 1578, 1705, 1732, 1586, 1750],
+    name='Internet Banking 57',
+    marker=dict(
+        color='rgb(84, 255, 159)'
+    )
+)
+trace4 = go.Bar(
+    x=['Statement Value (Jan)', 'Statement Value(Feb)',  'Statement Value(Mar)',  'Statement Value(Apr)'\
+       ,  'Statement Value(May)',  'Statement Value(Jun)',  'Statement Value(Jul)',  'Statement Value(Aug)'\
+       ,  'Statement Value(Sep)',  'Statement Value(Oct)',  'Statement Value(Nov)',  'Statement Value(Dec)'],
+    y=[84, 87, 102, 95, 105, 107, 108, 118, 129, 136, 139, 156],
+    name='Mobile Banking 57',
+    marker=dict(
+        color='rgb(255, 215, 0)'
+    )
+)
+data = [trace1, trace2, trace3, trace4]
+layout = go.Layout(
+    title='Internet Banking&Mobile Banking comparing',
+    barmode='group',
+    yaxis=dict(
+        title='THB (Billions)',
+        titlefont=dict(
+            size=16,
+            color='rgb(107, 107, 107)'
+        )
+    )
+)
+    
+fig = go.Figure(data=data, layout=layout)
+plot_url = py.plot(fig, filename='grouped-bar')
